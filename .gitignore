@@ -1,1 +1,5 @@
+//to ignore that file in github so we create .gitignore//
+
+project.text/
 node_modules/ 
+

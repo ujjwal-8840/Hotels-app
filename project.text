@@ -1,0 +1,25 @@
+Phase 1: Basic API and User System
+ Setup Node.js + Express project
+
+ MongoDB connection
+
+ Auth (register/login) with JWT
+
+ Create lesson and question schemas
+
+Phase 2: Learning & Quiz
+ API to fetch lessons per language
+
+ API to fetch questions
+
+ API to submit and store score
+
+ Progress tracker
+
+Phase 3: Deployment & Frontend
+ Host on Render/Railway
+
+ Build simple React frontend
+
+ Visuals integration (charts/diagrams)
+

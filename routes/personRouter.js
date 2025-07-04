@@ -11,7 +11,7 @@ const router = express.Router()
    res.status(200).json(response)
   }catch(error){
 console.log("error caught:",error)
-res.status(500).json(response)
+res.status(500).json({message:'500 is responding'})
   }
  });
  router.get('/',async (req,res)=>{
@@ -21,7 +21,6 @@ res.status(500).json(response)
  res.status(200).json(response)
  }catch(error){
  console.log('error find',error)
- res.status(500).send('internal error is find')
  }
   });
   router.get('/:workType',async (req,res)=>{
@@ -30,7 +29,8 @@ res.status(500).json(response)
       console.log(workType)
     if(workType==='chef'||workType==='owner'||workType==='waiter'||workType ==='receptionist'){
       const response = await Person.find({work:workType})
-      console.log('data fetched',response)
+      console.log('data fetched',response) 
+
     
        res.status(200).json(response)
     }else{

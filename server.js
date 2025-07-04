@@ -8,10 +8,10 @@ const b = fs.appendFile('file.text', so.username+'hi/n',(error)=>{
    }
 })
  info = {
-   name:"ujjwal",
-   interest:"girls",
+   name:"alice",
+   interest:"to gain knowledge",
    student: true,
-   skill: 'laundiyabaaj'
+   skill: 'developer'
 }
 console.log(info)
 module.export =info
