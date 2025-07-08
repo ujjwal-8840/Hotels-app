@@ -20,3 +20,4 @@ if(isMatchedpassword){
   }
 }));
  module.exports = passport
+ 

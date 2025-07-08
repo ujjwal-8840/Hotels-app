@@ -1,13 +1,13 @@
- const express = require('express')
+ require('dotenv').config()
+const express = require('express')
  const app = express();
  let db = require('./db')
+ const {jwtAuthMiddleware,generateToken} = require('./jwt')
  const bodyParser = require('body-parser')
+  
  app.use(bodyParser.json())
 //  const Person = require('./models/person')
 const passport = require('./auth')
-
-
-
 app.use (express.json())
 const logRequest = (req,res,next)=>{
    console.log(`${new Date().toLocaleString()} request to url: ${req.originalUrl}`);
@@ -26,9 +26,10 @@ res.send("welcome to my server")
  const menuRouter = require('./routes/menuRouter');
 const person = require('./models/person');
 
-  app.use('/person',logRequest,middleWare,personRouter)
+  app.use('/person',logRequest,jwtAuthMiddleware,personRouter)
   app.use('/menu',menuRouter)
- app.listen(9369,()=>{
+  const PORT = process.env.PORT||9369
+ app.listen(PORT,()=>{
     console.log('server is ready')
  })
 
